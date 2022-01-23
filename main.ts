@@ -1,5 +1,5 @@
 import yargs from "yargs";
-import axios from "axios";
+import axios, { AxiosPromise } from "axios";
 
 import { hideBin } from "yargs/helpers";
 
@@ -12,7 +12,7 @@ import { hideBin } from "yargs/helpers";
         console.log("\x1b[43m\x1b[30m",`${result['k']}:\n ${result['v']}`)
     })
 
-    function getResult(input: string) {
+    function getResult(input: string):AxiosPromise {
         return axios({
             method: "post",
             url: `https://fanyi.baidu.com/sug`,
